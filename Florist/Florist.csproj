@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{54FC8F56-99E4-44AF-83AB-06BF43D6BAB2}</ProjectGuid>
+    <ProjectGuid>{3C50B91B-B9F5-4893-ACFA-10FADD204335}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>WzorceProjekt</RootNamespace>
-    <AssemblyName>WzorceProjekt</AssemblyName>
+    <RootNamespace>Florist</RootNamespace>
+    <AssemblyName>Florist</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,20 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\FactoryMethods\ConsoleDisplay.cs" />
-    <Compile Include="Classes\FactoryMethods\DialogDsplay.cs" />
-    <Compile Include="Classes\FactoryMethods\MsgDisplayFactory.cs" />
-    <Compile Include="Classes\FlyWeight\Box.cs" />
-    <Compile Include="Classes\FlyWeight\BoxDimensionFactory.cs" />
-    <Compile Include="Classes\FlyWeight\BoxTest.cs" />
-    <Compile Include="Classes\FlyWeight\Dimension.cs" />
-    <Compile Include="Interfaces\FactoryMethodsInterfaces\IMsgDisplay.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
