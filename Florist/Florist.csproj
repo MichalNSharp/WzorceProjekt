@@ -43,6 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interface\ICustomer.cs" />
+    <Compile Include="Interface\IFlower.cs" />
+    <Compile Include="Interface\IPrice.cs" />
+    <Compile Include="Model\Customer.cs" />
+    <Compile Include="Model\FloristShop.cs" />
+    <Compile Include="Model\Flower.cs" />
+    <Compile Include="Model\Flowers\Daisy.cs" />
+    <Compile Include="Model\Flowers\Rose.cs" />
+    <Compile Include="Model\Price.cs" />
+    <Compile Include="Model\ShoppingCart.cs" />
+    <Compile Include="PriceList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
