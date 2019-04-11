@@ -88,7 +88,7 @@ namespace Florist.Model
 
         public string ShowDetails()
         {
-            return string.Format("{0}, I have: {1:C}", Name,Cash);
+            return string.Format("{0}, have: {1:C}", Name,Cash);
         }
     }
 }
