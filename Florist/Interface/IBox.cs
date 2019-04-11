@@ -10,7 +10,6 @@ namespace Florist.Interface
     {
         List<IFlower> GetFlowerList();
         void AddFlowerToBox(IFlower flower);
-
-        
+        string ShowDetails();
     }
 }

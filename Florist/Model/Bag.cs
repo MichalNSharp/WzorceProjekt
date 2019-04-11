@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Florist.Model
 {
-    class Box : IBox
+    class Bag : IBox
     {
-        private string BoxOwner;
+        private string BagOwner;
         private List<IFlower> flowerList;
 
-        public Box(ICustomer customer)
+        public Bag(ICustomer customer)
         {
-            BoxOwner = customer.GetCustomerName();
+            BagOwner = customer.GetCustomerName();
             flowerList = new List<IFlower>();
         }
 
@@ -30,12 +30,12 @@ namespace Florist.Model
 
         public string ShowDetails()
         {
-            string result = "Pudełko " + BoxOwner + " zawiera:\n";
+            string result = "Torba foliowa " + BagOwner + " zawiera:\n";
             foreach (var item in flowerList)
             {
                 result += item.ToString();
             }
             return result;
-        }        
+        }
     }
 }
