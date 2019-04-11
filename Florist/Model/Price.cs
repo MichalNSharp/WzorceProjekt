@@ -9,19 +9,21 @@ namespace Florist.Model
 {
     class Price : IPrice
     {
-        public string FlowerName;
-        public int FlowerPrice;
+        //private string FlowerName;
+        private int FlowerPrice;
 
-        public Price(string flowerName, int flowerPrice)
+        private IFlower _flower;
+
+        public Price(IFlower flower, int flowerPrice)
         {
-            this.FlowerName = flowerName;
+            this._flower = flower;
             this.FlowerPrice = flowerPrice;
         }
 
 
         public string GetFlowerName()
         {
-            return FlowerName;
+            return _flower.GetFlowerName();
         }
 
         public int GetFlowerPrice()

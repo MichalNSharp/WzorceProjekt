@@ -16,6 +16,7 @@ namespace Florist
             FloristShop floristShop = new FloristShop();
 
             ICustomer Janek = new Customer("Janek", 70);
+            Console.WriteLine(Janek.ShowDetails());
 
             Janek.GetFlower(new Rose(2));
             Janek.GetFlower(new Iris(2));
@@ -26,15 +27,15 @@ namespace Florist
             Console.WriteLine("Wózek Janka:\n" + shoppingCart);
             Janek.Pay();
             Console.WriteLine("Wózek Janka po zapłaceniu:\n" + shoppingCart);
-            Console.WriteLine("Jankowi zostało: {0} \n", Janek.GetCash());
+            Console.WriteLine("Jankowi zostało: {0:C} \n", Janek.GetCash());
 
             IBox pudelkoJanka = new Box(Janek);
             Janek.Pack(pudelkoJanka);
 
             Console.WriteLine("Pudełko Janka:\n" + pudelkoJanka);
 
-            Console.WriteLine("Żólte kwiaty kosztowały Janka: {0} \n", ValueOf(pudelkoJanka, "Yellow"));
-            Console.WriteLine("Jankowi zostało: {0} \n", Janek.GetCash());
+            Console.WriteLine("Żólte kwiaty kosztowały Janka: {0:C} \n", ValueOf(pudelkoJanka, "Yellow"));
+            Console.WriteLine("Jankowi zostało: {0:C} \n", Janek.GetCash());
 
         }
 
@@ -43,14 +44,12 @@ namespace Florist
             var oneColorFlowers = box.GetFlowerList()
                                      .Where(x=>x.GetFlowerColor().ToUpper() == color.ToUpper())
                                      .ToList();
-
-            var priceList = PriceList.GetInstance();
-
+            
             int value = 0;
 
             foreach (var item in oneColorFlowers)
             {
-                value += priceList.GetFlowerCharge(item);
+                value += PriceList.GetInstance().GetFlowerCharge(item);
             }
 
             return value;

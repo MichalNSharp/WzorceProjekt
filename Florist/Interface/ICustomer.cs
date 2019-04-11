@@ -16,5 +16,6 @@ namespace Florist.Interface
         int GetCash();
         string GetCustomerName();
         void Pack(IBox box);
+        string ShowDetails();
     }
 }

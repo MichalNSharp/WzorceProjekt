@@ -22,9 +22,9 @@ namespace Florist
             return priceList;
         }
 
-        public void SetPrice(string flowerColor, int flowerPrice)
+        public void SetPrice(IFlower flower, int flowerPrice)
         {
-            prices.Add(new Price(flowerColor, flowerPrice));
+            prices.Add(new Price(flower, flowerPrice));
         }
 
         public int GetFlowerCharge(IFlower flower)

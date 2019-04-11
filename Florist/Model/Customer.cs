@@ -85,5 +85,10 @@ namespace Florist.Model
 
             shoppingCart.ClearShoppingCart();
         }
+
+        public string ShowDetails()
+        {
+            return string.Format("{0}, I have: {1:C}", Name,Cash);
+        }
     }
 }
