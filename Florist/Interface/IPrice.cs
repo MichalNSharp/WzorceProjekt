@@ -8,6 +8,7 @@ namespace Florist.Interface
 {
     interface IPrice
     {
-        
+        string GetFlowerName();
+        int GetFlowerPrice();
     }
 }

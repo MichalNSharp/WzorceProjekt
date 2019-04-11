@@ -9,18 +9,35 @@ namespace Florist.Model
 {
     class Flower : IFlower
     {
-        public string Name { get; set; }
-        public string Color { get; set; }
+        private string Name { get; set; }
+        private string Color { get; set; }
         private int _Amount;
 
-        public int GetFlowerPrice()
+        public Flower(string name, string color, int amount)
+        {
+            this.Name = name;
+            this.Color = color;
+            this._Amount = amount;
+        }
+
+        public string GetFlowerName()
+        {
+            return Name;
+        }
+
+        public string GetFlowerColor()
+        {
+            return Color;
+        }
+
+        public int GetFlowerAmount()
         {
             return _Amount;
         }
-        
-        public void SetFlowerPrice(int amount)
+
+        public void SetFlowerAmount(int amount)
         {
-            _Amount = amount;
+            this._Amount = amount;
         }
 
         public override string ToString()

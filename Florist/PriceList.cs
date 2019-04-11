@@ -24,7 +24,20 @@ namespace Florist
 
         public void SetPrice(string flowerColor, int flowerPrice)
         {
-            prices.Add(new Price(flowerColor,flowerPrice));
+            prices.Add(new Price(flowerColor, flowerPrice));
         }
+
+        public int GetFlowerCharge(IFlower flower)
+        {
+            var price = prices.Where(x => x.GetFlowerName() == flower.GetFlowerName()).FirstOrDefault();
+
+            return flower.GetFlowerAmount() * price.GetFlowerPrice();
+        }
+
+        public bool IfFlowerExistInPriceList(IFlower flower)
+        {
+            return prices.Exists(x => x.GetFlowerName() == flower.GetFlowerName());
+        }
+
     }
 }

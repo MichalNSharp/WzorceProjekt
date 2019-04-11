@@ -14,15 +14,16 @@ namespace Florist
         {
             FloristShop floristShop = new FloristShop();
 
-            Customer Janek = new Customer("Janek",200);
-            
+            Customer Janek = new Customer("Janek", 100);
+
             Janek.GetFlower(new Rose(5));
             Janek.GetFlower(new Daisy(1));
 
             ShoppingCart shoppingCart = Janek.GetShoppingCart();
 
             Console.WriteLine("Wózek Janka:\n" + shoppingCart);
-
+            Janek.Pay();
+            Console.WriteLine("Wózek Janka:\n" + shoppingCart);
         }
     }
 }

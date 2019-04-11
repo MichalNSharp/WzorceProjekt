@@ -15,7 +15,7 @@ namespace Florist.Model
 
         private ShoppingCart shoppingCart = new ShoppingCart();
 
-        private PriceList priceList = PriceList.GetInstance();
+        private PriceList priceList;
 
         public Customer(string imie, int cash)
         {
@@ -35,7 +35,35 @@ namespace Florist.Model
 
         public void Pay()
         {
-            
+            priceList = PriceList.GetInstance();
+
+            List<IFlower> flowerToRemove = new List<IFlower>();
+
+            foreach (IFlower item in shoppingCart.GetFlowers())
+            {
+                if (priceList.IfFlowerExistInPriceList(item))
+                {
+                    var charge = priceList.GetFlowerCharge(item);
+                    if (Cash >= charge)
+                    {
+                        Cash -= charge;
+                    }
+                    else
+                    {
+                        flowerToRemove.Add(item);
+                    }
+                }
+                else
+                {
+                    flowerToRemove.Add(item);
+                }
+            }
+
+            foreach (var item in flowerToRemove)
+            {
+                shoppingCart.RemoveFromCart(item);
+            }
+
         }
     }
 }

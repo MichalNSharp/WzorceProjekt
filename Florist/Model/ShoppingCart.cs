@@ -16,6 +16,16 @@ namespace Florist.Model
             flowers.Add(flower);
         }
 
+        public void RemoveFromCart(IFlower flower)
+        {
+            flowers.Remove(flower);
+        }
+
+        public List<IFlower> GetFlowers()
+        {
+            return flowers;
+        }
+
         public override string ToString()
         {
             string result = null;

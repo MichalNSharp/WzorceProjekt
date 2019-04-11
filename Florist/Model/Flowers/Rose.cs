@@ -8,11 +8,10 @@ namespace Florist.Model.Flowers
 {
     class Rose : Flower
     {
-        public Rose(int amount )
+        public Rose(int amount)
+            : base("Rose", "Red", amount)
         {
-            this.Name = "Rose";
-            this.Color = "Red";
-            this.SetFlowerPrice(amount);
+
         }
     }
 }

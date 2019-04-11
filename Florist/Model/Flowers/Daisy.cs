@@ -9,10 +9,9 @@ namespace Florist.Model.Flowers
     class Daisy : Flower
     {
         public Daisy(int amount)
+            : base("Daisy", "White", amount)
         {
-            this.Name = "Daisy";
-            this.Color = "White";
-            this.SetFlowerPrice(35);
+
         }
     }
 }
