@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Florist.Model
 {
-    class Box : IBox
+    class Bag : IBox
     {
         private string BoxOwner;
         List<IFlower> flowerList;
 
-        public Box(ICustomer customer)
+        public Bag(ICustomer customer)
         {
             BoxOwner = customer.GetCustomerName();
             flowerList = new List<IFlower>();
@@ -30,7 +30,7 @@ namespace Florist.Model
 
         public string ShowDetails()
         {
-            string result = "Pudełko " + BoxOwner + " zawiera:\n";
+            string result = "Torba foliowa " + BoxOwner + " zawiera:\n";
             foreach (var item in flowerList)
             {
                 result += item.ToString();

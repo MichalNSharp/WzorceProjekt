@@ -48,6 +48,7 @@
     <Compile Include="Interface\IFlower.cs" />
     <Compile Include="Interface\IFlowerFactory.cs" />
     <Compile Include="Interface\IPrice.cs" />
+    <Compile Include="Model\Bag.cs" />
     <Compile Include="Model\Box.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\FloristShop.cs" />

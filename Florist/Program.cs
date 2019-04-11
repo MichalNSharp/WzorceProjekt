@@ -13,10 +13,13 @@ namespace Florist
     {
         static void Main(string[] args)
         {
-            IFlowerFactory flowerFactory = new FlowerFactory();
+            //Fabryka abstrakcyjna - fabryka kwiatów dostarcza nowe typy
+            IFlowerFactory flowerFactory = new FlowerFactory(); 
+
+            //Singleton - Kwiaciarnia może posiadać tylko jeden cennik dla kwiatow 
+            FloristShop floristShop = new FloristShop(flowerFactory);
 
             //#################
-            FloristShop floristShop = new FloristShop();
 
             ICustomer Janek = new Customer("Janek", 70);
             Console.WriteLine(Janek.ShowDetails());
@@ -35,25 +38,25 @@ namespace Florist
             IBox pudelkoJanka = new Box(Janek);
             Janek.Pack(pudelkoJanka);
 
-            Console.WriteLine("Pudełko Janka:\n" + pudelkoJanka.ShowDetails());
+            Console.WriteLine(pudelkoJanka.ShowDetails());
 
             Console.WriteLine("Żólte kwiaty kosztowały Janka: {0:C} \n", ValueOf(pudelkoJanka, "Yellow"));
             Console.WriteLine("Jankowi zostało: {0:C} \n", Janek.GetCash());
 
 
-            //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+            //$$$$$$$$$$>>>New Customer<<<$$$$$$$$$$$$$$$$$$$
 
             ICustomer Franek = new Customer("Franek", 300);
-            Franek.GetFlower(new Iris(9));
-            Franek.GetFlower(new Rose(9));
-            Franek.GetFlower(new Daisy(4));
+            Franek.GetFlower(flowerFactory.CreateFlower(FlowerType.Iris, 5));
+            Franek.GetFlower(flowerFactory.CreateFlower(FlowerType.Rose, 5));
+            Franek.GetFlower(flowerFactory.CreateFlower(FlowerType.Daisy, 5));
 
             Console.WriteLine("Wózek Franka:\n" + Franek.GetShoppingCart());
             Franek.Pay();
             Console.WriteLine("Wózek Franka po zapłaceniu:\n" + Franek.GetShoppingCart());
             Console.WriteLine("Frankowi zostało: {0} \n", Franek.GetCash());
 
-            IBox torbaFranka = new Box(Franek);
+            IBox torbaFranka = new Bag(Franek);
             Franek.Pack(torbaFranka);
 
             Console.WriteLine(torbaFranka.ShowDetails());
