@@ -9,9 +9,9 @@ namespace Florist.Model
 {
     class Customer : ICustomer
     {
-        public string Imie { get; set; }
+        private string Name { get; set; }
 
-        public int Cash { get; set; }
+        private int Cash { get; set; }
 
         private ShoppingCart shoppingCart = new ShoppingCart();
 
@@ -19,7 +19,7 @@ namespace Florist.Model
 
         public Customer(string imie, int cash)
         {
-            this.Imie = imie;
+            this.Name = imie;
             this.Cash = cash;
         }
 
@@ -64,6 +64,26 @@ namespace Florist.Model
                 shoppingCart.RemoveFromCart(item);
             }
 
+        }
+
+        public int GetCash()
+        {
+            return Cash;
+        }
+
+        public string GetCustomerName()
+        {
+            return Name;
+        }
+
+        public void Pack(IBox box)
+        {
+            foreach (var item in shoppingCart.GetFlowers())
+            {
+                box.AddFlowerToBox(item);
+            }
+
+            shoppingCart.ClearShoppingCart();
         }
     }
 }

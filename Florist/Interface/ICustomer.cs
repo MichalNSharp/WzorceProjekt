@@ -13,5 +13,8 @@ namespace Florist.Interface
         void GetFlower(IFlower flower);
 
         void Pay();
+        int GetCash();
+        string GetCustomerName();
+        void Pack(IBox box);
     }
 }

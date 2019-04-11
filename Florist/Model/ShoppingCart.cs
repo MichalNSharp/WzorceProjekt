@@ -26,6 +26,11 @@ namespace Florist.Model
             return flowers;
         }
 
+        public void ClearShoppingCart()
+        {
+            flowers.Clear();
+        }
+
         public override string ToString()
         {
             string result = null;

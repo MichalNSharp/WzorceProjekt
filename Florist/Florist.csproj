@@ -43,13 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interface\IBox.cs" />
     <Compile Include="Interface\ICustomer.cs" />
     <Compile Include="Interface\IFlower.cs" />
     <Compile Include="Interface\IPrice.cs" />
+    <Compile Include="Model\Box.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\FloristShop.cs" />
     <Compile Include="Model\Flower.cs" />
     <Compile Include="Model\Flowers\Daisy.cs" />
+    <Compile Include="Model\Flowers\Iris.cs" />
     <Compile Include="Model\Flowers\Rose.cs" />
     <Compile Include="Model\Price.cs" />
     <Compile Include="Model\ShoppingCart.cs" />

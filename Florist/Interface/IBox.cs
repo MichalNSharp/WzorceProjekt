@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Florist.Interface
 {
-    interface IFlower
+    interface IBox
     {
-        string GetFlowerName();
-        int GetFlowerAmount();
-        void SetFlowerAmount(int amount);
-        string GetFlowerColor();
+        List<IFlower> GetFlowerList();
+        void AddFlowerToBox(IFlower flower);
+
+        
     }
 }
