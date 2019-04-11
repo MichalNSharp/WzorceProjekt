@@ -28,7 +28,7 @@ namespace Florist.Model
             return flowerList;
         }
 
-        public override string ToString()
+        public string ShowDetails()
         {
             string result = null;
             foreach (var item in flowerList)

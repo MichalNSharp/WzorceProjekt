@@ -9,6 +9,7 @@ namespace Florist.Interface
     interface IBox
     {
         List<IFlower> GetFlowerList();
-        void AddFlowerToBox(IFlower flower);        
+        void AddFlowerToBox(IFlower flower);
+        string ShowDetails();
     }
 }

@@ -35,7 +35,7 @@ namespace Florist
             IBox pudelkoJanka = new Box(Janek);
             Janek.Pack(pudelkoJanka);
 
-            Console.WriteLine("Pudełko Janka:\n" + pudelkoJanka);
+            Console.WriteLine("Pudełko Janka:\n" + pudelkoJanka.ShowDetails());
 
             Console.WriteLine("Żólte kwiaty kosztowały Janka: {0:C} \n", ValueOf(pudelkoJanka, "Yellow"));
             Console.WriteLine("Jankowi zostało: {0:C} \n", Janek.GetCash());
