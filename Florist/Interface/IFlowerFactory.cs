@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Florist.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace Florist.Interface
 {
-    interface IBox
+    interface IFlowerFactory
     {
-        List<IFlower> GetFlowerList();
-        void AddFlowerToBox(IFlower flower);        
+        IFlower CreateFlower(FlowerType flowerType, int Amount);
     }
 }

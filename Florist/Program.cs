@@ -13,14 +13,17 @@ namespace Florist
     {
         static void Main(string[] args)
         {
+            IFlowerFactory flowerFactory = new FlowerFactory();
+
+            //#################
             FloristShop floristShop = new FloristShop();
 
             ICustomer Janek = new Customer("Janek", 70);
             Console.WriteLine(Janek.ShowDetails());
 
-            Janek.GetFlower(new Rose(2));
-            Janek.GetFlower(new Iris(2));
-            Janek.GetFlower(new Daisy(1));
+            Janek.GetFlower(flowerFactory.CreateFlower(FlowerType.Rose,5));
+            Janek.GetFlower(flowerFactory.CreateFlower(FlowerType.Daisy, 3));
+            Janek.GetFlower(flowerFactory.CreateFlower(FlowerType.Iris, 2));
 
             ShoppingCart shoppingCart = Janek.GetShoppingCart();
 
